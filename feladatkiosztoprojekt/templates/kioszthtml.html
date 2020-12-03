@@ -7,22 +7,16 @@
 <body>
 
 <table border="1">
-	<tr>
+	{% for sor in lista %}
+		<tr>
 		<td>
-			{{ lista.0.0 }}
+			{{ sor.0 }}
 		</td>
 		<td>
-			{{ lista.0.1 }}
+			{{ sor.1 }}
 		</td>
-	</tr>
-	<tr>
-		<td>
-			{{ lista.1.0 }}
-		</td>
-		<td>
-			{{ lista.1.1 }}
-		</td>
-	</tr>
+		</tr>
+	{% endfor %}
 </table>
 </body>
 </html>
