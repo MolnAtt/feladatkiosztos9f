@@ -6,6 +6,12 @@
 </head>
 <body>
 
+<form method="POST">
+{% csrf_token %}
+<div>tanuló neve: <input type="text" name="user"></div>
+<div>jelszó: <input type="password" name="pwd"></div>
+
+
 <table border="1">
 	{% for sor in lista %}
 		<tr>
@@ -13,10 +19,16 @@
 			{{ sor.0 }}
 		</td>
 		<td>
-			{{ sor.1 }}
+			{% if sor.1 == 'nincs' %}
+				<input type="submit" value="Elvállalom" name = "{{ sor.0 }}" value = "{{ sor.0 }}">
+			{% else %}
+				{{ sor.1 }}
+			{% endif %}
 		</td>
 		</tr>
 	{% endfor %}
 </table>
+</form>
+
 </body>
 </html>
