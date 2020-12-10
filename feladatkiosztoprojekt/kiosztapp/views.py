@@ -16,11 +16,6 @@ def home_view(request, *args, **kwargs):
 		else:
 			lista.append([t.tenev, "szabadon választható"])
 		print(f'{t.tenev} tetelnév hozzáadva a lista listához')
-	"""	kontextus = {"lista":
-		[
-			["1. Tétel", "Fodor Dániel"], 
-			["2. Tétel", "üres"]
-		] 
-		} """
+		
 	kontextus = {"lista": lista}
 	return render(request, "kioszthtml.html", kontextus) # latter is the context
